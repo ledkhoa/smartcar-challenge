@@ -4,7 +4,7 @@ import { GMEngineActionStatus } from '../enums/gm-engine-action-status.enum';
 import { GMEngineAction } from '../enums/gm-engine-action.enum';
 import { SmartcarEngineActionStatus } from '../enums/smartcar-engine-action-status.enum';
 import { SmartcarEngineAction } from '../enums/smartcar-engine-action.enum';
-import { mapToEnergyLevel, mapToSecurityStatus, mapToVehicle } from '../mappers/gm.mappers';
+import { mapToEnergyLevel, mapToSecurityStatus, mapToVehicle } from '../mappers/gm-mapper';
 import EnergyLevel from '../models/energy-level.model';
 import EnergyPercentage from '../models/energy-percentage.model';
 import EngineActionStatus from '../models/engine-action-status.model';
@@ -86,7 +86,6 @@ export const setEngineAction = async (id: number, action: SmartcarEngineAction):
 
     const res = await axios.post(`${url}/actionEngineService`, request);
 
-    console.log(res)
     if(res.data.status === '200') {
         const status = res.data.actionResult.status;
         

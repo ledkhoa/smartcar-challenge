@@ -7,7 +7,7 @@ const mockConfig = {
 jest.mock('../../src/config', () => mockConfig);
 
 import * as GMService from '../../src/services/gm-service';
-import * as mappers from '../../src/mappers/gm.mappers';
+import * as mappers from '../../src/mappers/gm-mapper';
 import axios from 'axios';
 import Vehicle from '../../src/models/vehicle.model';
 import SecurityStatus from '../../src/models/security-status.model';
@@ -30,7 +30,7 @@ describe('GM Service', () => {
             
             const fakeRequest = {
                 id,
-                responseType: "JSON"
+                responseType: 'JSON'
             };
             
             const fakeGMResponse = {
@@ -64,7 +64,7 @@ describe('GM Service', () => {
             
             const fakeRequest = {
                 id,
-                responseType: "JSON"
+                responseType: 'JSON'
             };
             
             const fakeGMResponse = {
@@ -93,7 +93,7 @@ describe('GM Service', () => {
             
             const fakeRequest = {
                 id,
-                responseType: "JSON"
+                responseType: 'JSON'
             };
             
             const fakeGMResponse = {
@@ -131,7 +131,7 @@ describe('GM Service', () => {
             
             const fakeRequest = {
                 id,
-                responseType: "JSON"
+                responseType: 'JSON'
             };
             
             const fakeGMResponse = {
@@ -160,7 +160,7 @@ describe('GM Service', () => {
             
             const fakeRequest = {
                 id,
-                responseType: "JSON"
+                responseType: 'JSON'
             };
             
             const fakeGMResponse = {
@@ -197,7 +197,7 @@ describe('GM Service', () => {
             
             const fakeRequest = {
                 id,
-                responseType: "JSON"
+                responseType: 'JSON'
             };
             
             const fakeGMResponse = {
@@ -224,7 +224,7 @@ describe('GM Service', () => {
             
             const fakeRequest = {
                 id,
-                responseType: "JSON"
+                responseType: 'JSON'
             };
             
             const fakeGMResponse = {
@@ -266,7 +266,7 @@ describe('GM Service', () => {
             
             const fakeRequest = {
                 id,
-                responseType: "JSON"
+                responseType: 'JSON'
             };
             
             const fakeGMResponse = {
@@ -303,7 +303,7 @@ describe('GM Service', () => {
             
             const fakeRequest = {
                 id,
-                responseType: "JSON"
+                responseType: 'JSON'
             };
             
             const fakeGMResponse = {
@@ -330,7 +330,7 @@ describe('GM Service', () => {
             
             const fakeRequest = {
                 id,
-                responseType: "JSON"
+                responseType: 'JSON'
             };
             
             const fakeGMResponse = {
@@ -376,7 +376,7 @@ describe('GM Service', () => {
             const fakeRequest = {
                 id,
                 command,
-                responseType: "JSON"
+                responseType: 'JSON'
             };
             
             const fakeGMResponse = {
@@ -412,7 +412,7 @@ describe('GM Service', () => {
             const fakeRequest = {
                 id,
                 command,
-                responseType: "JSON"
+                responseType: 'JSON'
             };
             
             const fakeGMResponse = {
@@ -448,7 +448,7 @@ describe('GM Service', () => {
             const fakeRequest = {
                 id,
                 command,
-                responseType: "JSON"
+                responseType: 'JSON'
             };
             
             const fakeGMResponse = {

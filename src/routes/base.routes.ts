@@ -5,6 +5,16 @@ import * as GMService from "../services/gm-service";
 
 const router = Router();
 
+/*
+    I designed this API with the idea that it could be a factory to handle multiple
+    car manufacturers.
+
+    All errors will bubble up and get handled here in the router. Ideally, we'd 
+    use a logger library instead of console.log.
+    I added middleware to validate params and request bodies so by the time we handle them
+    here in the router we already know that they are valid. In a production app I would
+    use a schema validation library like joi.
+*/
 router.get('/vehicles/:id', idValidation, async (req: Request, res: Response) => {
     const id = +req.params.id;
 
@@ -17,7 +27,7 @@ router.get('/vehicles/:id', idValidation, async (req: Request, res: Response) =>
         
         res.status(404).json(`Vehicle with id ${id} not found.`);
     } catch(e: any) {
-        console.log(`GET /vehicles/:id`, e);
+        console.log('GET /vehicles/:id', e);
         res.status(500).json(e.message);
     }
 });
@@ -34,7 +44,7 @@ router.get('/vehicles/:id/doors', idValidation, async (req: Request, res: Respon
 
         res.status(404).json(`Vehicle with id ${id} not found.`);
     } catch(e: any) {
-        console.log(`GET /vehicles/:id/doors`, e);
+        console.error('GET /vehicles/:id/doors', e);
         res.status(500).json(e.message);
     }
 });
@@ -51,7 +61,7 @@ router.get('/vehicles/:id/fuel', idValidation, async (req: Request, res: Respons
 
         res.status(404).json(`Vehicle with id ${id} not found.`);
     } catch(e: any) {
-        console.log(`GET /vehicles/:id/fuel`, e);
+        console.log('GET /vehicles/:id/fuel', e);
         res.status(500).json(e.message);
     }
 });
@@ -68,7 +78,7 @@ router.get('/vehicles/:id/battery', idValidation, async (req: Request, res: Resp
 
         res.status(404).json(`Vehicle with id ${id} not found.`);
     } catch(e: any) {
-        console.log(`GET /vehicles/:id/battery`, e);
+        console.log('GET /vehicles/:id/battery', e);
         res.status(500).json(e.message);
     }
 });
@@ -86,7 +96,7 @@ router.post('/vehicles/:id/engine', idValidation, engineActionValidation, async 
 
         return res.status(404).json(`Vehicle with id ${id} not found.`);
     } catch(e: any) {
-        console.log(`POST /vehicles/:id/engine`, e);
+        console.log('POST /vehicles/:id/engine', e);
         res.status(500).json(e.message);
     }
 });
